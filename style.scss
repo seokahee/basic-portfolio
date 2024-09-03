@@ -1,45 +1,271 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
+body {
+  font-family: "Press Start 2P", cursive;
+  background-color: black;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-header {
-  width: 20%;
-  margin: 1%;
+.title-container {
+  height: 30vh;
+  padding: 2%;
   position: relative;
-  text-align: center;
-  z-index: 1;
-  border-radius: 20px;
-  color: white;
+  overflow: hidden;
 }
 
-header::before {
-  content: "";
+.title-text {
+  font-size: 3vh;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  top: 5vh;
+  color: transparent;
+}
+
+.title-text::before {
+  content: "KAHEE's Portfolio!";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 20px;
-  background: linear-gradient(90deg, white 33%, black 33%, black 66%);
-  background-size: 300% 300%;
-  z-index: -1;
-  animation: borderColorAnimation 8s infinite;
+  // top: 0;
+  // left: 0;
+  // width: 100%;
+  // height: 100%;
+  // overflow: hidden;
+
+  color: white;
+  overflow: hidden;
+  // background: linear-gradient(to right, white 0%, transparent 100%);
+  // background-clip: text;
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  animation: titleTxt 10s steps(30) infinite;
 }
 
-@keyframes borderColorAnimation {
+@keyframes titleTxt {
+  0% {
+    width: 100%;
+    opacity: 1;
+  }
   100% {
-    background-position: 200% 0%;
+    width: 0%;
+    opacity: 1;
   }
 }
 
-.navUl {
-  display: flex;
-  justify-content: space-evenly;
-  list-style: none;
+.pacman {
+  // position: absolute;
+  top: 2vh;
+  left: 0;
+  // z-index: 99;
+  animation: move 10s linear infinite;
+  // animation-delay: 3s;
+}
 
-  li:hover {
-    cursor: pointer;
+.pacman::before,
+.pacman::after {
+  content: "";
+  // display: block;
+  // height: 0;
+  // width: 0;
+  border: 30px solid yellow;
+  border-radius: 50%;
+  position: absolute;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  animation: mouthTop 0.7s ease infinite;
+}
+
+.pacman::after {
+  border-bottom-color: yellow;
+  border-top-color: transparent;
+  animation: mouthBottom 0.7s ease infinite;
+}
+
+@keyframes mouthTop {
+  50% {
+    transform: rotate(-44deg);
   }
 }
+
+@keyframes mouthBottom {
+  50% {
+    transform: rotate(44deg);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(28%); /* 텍스트의 초기 위치 (오른쪽) */
+  }
+  100% {
+    transform: translateX(0%); /* 텍스트가 왼쪽으로 사라짐 */
+  }
+
+  // 0% {
+  //   left: 100%;
+  // }
+  // 100% {
+  //   left: 0%;
+  // }
+}
+
+// @keyframes food {
+// 0% {
+//   transform: translateX(0);
+//   // opacity: 1;
+// }
+// 50% {
+//   transform: translateX(-50px);
+//   // opacity: 0;
+// }
+// 100% {
+//   transform: translateX(-50px);
+//   // opacity: 0;
+// }
+
+//   0% {
+//     width: 0%; /* 애니메이션 시작 시 너비를 0으로 설정 */
+//   }
+//   50% {
+//     width: 100%; /* 애니메이션 중간에 너비를 100%로 설정 */
+//   }
+//   100% {
+//     width: 0; /* 애니메이션 끝에 너비를 0으로 설정 */
+//   }
+// }
+
+// .title-container {
+//   height: 10vh;
+//   padding: 2%;
+//   position: relative;
+//   overflow: hidden; /* 텍스트가 컨테이너를 넘치지 않도록 설정 */
+// }
+
+// .title-text {
+//   font-size: 3vh;
+//   white-space: nowrap;
+//   margin: 0;
+//   position: relative; /* 자식 요소의 절대 위치를 기준으로 설정 */
+//   color: transparent;
+//   display: inline-block; /* 애니메이션 효과를 위해 인라인 블록으로 설정 */
+//   overflow: hidden; /* 컨테이너를 넘치지 않도록 설정 */
+// }
+
+// .title-text::before {
+//   content: "KAHEE's Portfolio!";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   overflow: hidden;
+//   background: linear-gradient(to right, rgb(0, 0, 0) 0%, transparent 100%);
+//   background-clip: text;
+//   -webkit-background-clip: text;
+//   -webkit-text-fill-color: transparent;
+//   animation: typing 8s steps(35) infinite;
+// }
+
+// @keyframes typing {
+//   0% {
+//     transform: translateX(100%); /* 텍스트가 화면 오른쪽에서 시작 */
+//   }
+//   100% {
+//     transform: translateX(-100%); /* 텍스트가 화면 왼쪽으로 이동하면서 사라짐 */
+//   }
+// }
+
+//
+//
+// body {
+//   background: #000;
+//   color: #fff;
+//   padding: 0;
+//   margin: 0;
+// }
+
+// .pacman {
+//   width: 100px;
+//   height: 100px;
+//   border-radius: 50%;
+//   background: #f2d648;
+//   position: relative;
+//   margin-top: 20px;
+
+//   &__eye {
+//     position: absolute;
+//     width: 10px;
+//     height: 10px;
+//     border-radius: 50%;
+//     top: 20px;
+//     right: 40px;
+//     background: #333333;
+//   }
+
+//   &__mouth {
+//     background: #000;
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+//     animation-name: eat;
+//     animation-duration: 0.7s;
+//     animation-iteration-count: infinite;
+//   }
+//   // &__food {
+//   //   position: absolute;
+//   //   top: 40%;
+//   //   left: 120px;
+//   //   animation-name: food;
+//   //   animation-duration: 5s;
+//   //   animation-iteration-count: infinite;
+//   // }
+
+//   animation: move 10s linear infinite;
+// }
+
+// @keyframes eat {
+//   0% {
+//     clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+//   }
+//   25% {
+//     clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
+//   }
+
+//   50% {
+//     clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
+//   }
+
+//   75% {
+//     clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
+//   }
+
+//   100% {
+//     clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+//   }
+// }
+
+// @keyframes food {
+//   0% {
+//     transform: translateX(0);
+//     opacity: 1;
+//   }
+//   100% {
+//     transform: translateX(-50px);
+//     opacity: 0;
+//   }
+// }
+
+// @keyframes move {
+//   0% {
+//     left: 0%;
+//   }
+
+//   100% {
+//     left: 100%;
+//   }
+// }

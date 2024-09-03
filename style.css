@@ -1,45 +1,90 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+body {
+  font-family: "Press Start 2P", cursive;
+  background-color: black;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-header {
-  width: 20%;
-  margin: 1%;
+.title-container {
+  height: 30vh;
+  padding: 2%;
   position: relative;
-  text-align: center;
-  z-index: 1;
-  border-radius: 20px;
-  color: white;
+  overflow: hidden;
 }
 
-header::before {
-  content: "";
+.title-text {
+  font-size: 3vh;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  top: 5vh;
+  color: transparent;
+}
+
+.title-text::before {
+  content: "KAHEE's Portfolio!";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 20px;
-  background: linear-gradient(90deg, white 33%, black 33%, black 66%);
-  background-size: 300% 300%;
-  z-index: -1;
-  animation: borderColorAnimation 8s infinite;
+  color: white;
+  overflow: hidden;
+  animation: titleTxt 10s steps(30) infinite;
 }
 
-@keyframes borderColorAnimation {
+@keyframes titleTxt {
+  0% {
+    width: 100%;
+    opacity: 1;
+  }
   100% {
-    background-position: 200% 0%;
+    width: 0%;
+    opacity: 1;
   }
 }
-.navUl {
-  display: flex;
-  justify-content: space-evenly;
-  list-style: none;
+.pacman {
+  top: 2vh;
+  left: 0;
+  animation: move 10s linear infinite;
 }
-.navUl li:hover {
-  cursor: pointer;
+
+.pacman::before,
+.pacman::after {
+  content: "";
+  border: 30px solid yellow;
+  border-radius: 50%;
+  position: absolute;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  animation: mouthTop 0.7s ease infinite;
+}
+
+.pacman::after {
+  border-bottom-color: yellow;
+  border-top-color: transparent;
+  animation: mouthBottom 0.7s ease infinite;
+}
+
+@keyframes mouthTop {
+  50% {
+    transform: rotate(-44deg);
+  }
+}
+@keyframes mouthBottom {
+  50% {
+    transform: rotate(44deg);
+  }
+}
+@keyframes move {
+  0% {
+    transform: translateX(28%); /* 텍스트의 초기 위치 (오른쪽) */
+  }
+  100% {
+    transform: translateX(0%); /* 텍스트가 왼쪽으로 사라짐 */
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

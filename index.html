@@ -7,19 +7,77 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <h1>KAHEE's Portfolio!</h1>
+    <header class="title-container">
+      <h1 class="title-text">KAHEE's Portfolio!</h1>
+      <div class="pacman"></div>
     </header>
+
+    <!-- <div class="pacman">
+      <div class="pacman__eye"></div>
+      <div class="pacman__mouth"></div>
+    </div>
+    <div class="pacman__food">KAHEE's Portfolio!</div> -->
+
     <ul class="navUl">
       <li>About Me</li>
       <li>Skill</li>
       <li>Project</li>
       <li>Activities</li>
     </ul>
-    <!--  -->
 
-    <main>
-      <div><img src="img/me.png" alt="캐릭터 이미지" /></div>
-    </main>
+    <main></main>
   </body>
 </html>
+
+<!-- // .title-container {
+  //   width: 15%; /* 컨테이너의 너비를 뷰포트의 20%로 설정하여 반응형 디자인을 구현함 */
+  //   height: 6vh; /* 컨테이너의 높이를 뷰포트 높이의 5%로 설정하여 반응형으로 조절됨 */
+  //   position: relative; /* 컨테이너따라 백그라운드 사이즈를 조절하기 위함*/
+  // }
+  
+  // .title-background {
+  //   position: absolute;
+  //   height: 100%; /* 컨테이너의 전체 높이를 채워 배경이 전체를 덮도록 설정함 */
+  //   background-color: black;
+  //   border-radius: 5px;
+  //   animation: bgAnimation 2s linear 5; /* 배경 확장 애니메이션 n초동안 실행, n번 반복*/
+  // }
+  
+  // .title-text {
+  //   padding: 5%;
+  //   display: flex;
+  //   align-items: center;
+  //   font-size: 3vh; /* 폰트 크기를 뷰포트 높이에 따라 설정하여 반응형 텍스트 크기 제공 */
+  //   font-weight: bold;
+  //   white-space: nowrap; /* 텍스트 줄 바꿈을 방지하여 한 줄에 텍스트가 유지되도록 함 */
+  // }
+  
+  // .title-text::before {
+  //   content: "KAHEE's Portfolio!"; /* 삽입된 텍스트 콘텐츠로, 포트폴리오 제목을 제공함 */
+  //   background-clip: text; /* 텍스트 부분에만 배경 이미지가 보이도록 설정하여 텍스트 내 그라데이션 효과를 적용함 */
+  //   -webkit-background-clip: text; /* 크로스 브라우징을 위해 WebKit 기반 브라우저에서 배경 클립을 지원 */
+  //   -webkit-text-fill-color: transparent; /* 텍스트 색상을 투명하게 설정하여 배경 이미지가 텍스트를 통해 보이도록 함 */
+  //   background-image: linear-gradient(
+  //     to right,
+  //     black 0%,
+  //     white 0%
+  //   ); /* 오른쪽으로 파란색에서 흰색으로 그라데이션 시작, 텍스트가 점차 보이도록 함 */
+  // }
+  
+  // @keyframes bgAnimation {
+  //   0% {
+  //     width: 0; /* 애니메이션 시작 시 배경 너비를 0으로 하여 보이지 않게 설정 */
+  //   }
+  //   100% {
+  //     width: 100%; /* 애니메이션 종료 시 배경 너비 확장 */
+  //   }
+  // }
+  
+  // @keyframes revealWhiteText {
+  //   0% {
+  //     background-image: linear-gradient(to right, black 0%, black 0%);
+  //   }
+  //   100% {
+  //     background-image: linear-gradient(to right, black 0%, white 100%);
+  //   }
+  // } -->
