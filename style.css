@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 20%;
+  margin: 1%;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  border-radius: 20px;
+  color: white;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background: linear-gradient(90deg, white 33%, black 33%, black 66%);
+  background-size: 300% 300%;
+  z-index: -1;
+  animation: borderColorAnimation 8s infinite;
+}
+
+@keyframes borderColorAnimation {
+  100% {
+    background-position: 200% 0%;
+  }
+}
+.navUl {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+.navUl li:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */
