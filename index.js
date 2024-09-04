@@ -70,3 +70,31 @@ backendImages.forEach((image) => {
   li.appendChild(img);
   backendList.appendChild(li);
 });
+
+const aboutMe = [
+  { label: "NAME", value: "서가희" },
+  { label: "BIRTH", value: "1995-04-30" },
+  { label: "EMAIL", value: "9599kaka@naver.com" },
+  { label: "PHONE", value: "010-5659-8475" },
+  { label: "INTRO", value: "다양한 시도를 좋아하는 개발자입니다." },
+];
+
+const container = document.querySelector(".about-container");
+
+aboutMe.forEach((item) => {
+  const div = document.createElement("div");
+  div.classList.add("about-item");
+
+  const label = document.createElement("span");
+  label.classList.add("about-label");
+  label.textContent = `${item.label}_`;
+
+  const value = document.createElement("span");
+  value.classList.add("about-value");
+  value.textContent = item.value;
+
+  div.appendChild(label);
+  div.appendChild(value);
+
+  container.appendChild(div);
+});

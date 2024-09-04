@@ -148,16 +148,70 @@ body {
   display: none;
 }
 .section-content.active {
-  display: block;
+  display: flex;
+  justify-content: center;
   width: 100%;
 }
 
 // about
+// .about-container {
+//   width: 90%;
+//   height: 40vh;
+//   background-color: #008080;
+//   box-shadow: 0 0 20px 8px #008080;
+
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-evenly;
+// }
+
 .about-container {
+  width: 50%;
+  height: 40vh;
+  padding: 1% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #4300ff;
+  box-shadow: 0 0 5px 20px #4300ff;
+  font-size: 1.6vw;
+
+  // background-color: #3800d7de;
+  // box-shadow: 0 0 5px 20px #3800d7de;
+
+  .resume {
+    margin-bottom: 3vh;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: 2vw;
+    animation: flightBox 2s ease-in-out infinite;
+  }
+  .resume:hover {
+    cursor: pointer;
+    color: #15d200;
+  }
+
+  .about-item {
+    display: flex;
+    width: 100%;
+    animation: typing 4s steps(50) forwards;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #15d200;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
 }
 
 // skill
 .list-container {
+  width: 100%;
   display: flex;
   margin: 1%;
   flex-direction: row;
@@ -166,7 +220,7 @@ body {
   .list-title {
     color: aqua;
     font-weight: bold;
-    font-size: 3vh;
+    font-size: 2vw;
   }
 
   div {
@@ -196,8 +250,8 @@ body {
   }
   li {
     img {
-      width: 50px;
-      height: 50px;
+      width: 80px;
+      height: 80px;
       border-radius: 5px;
     }
     img:hover {
