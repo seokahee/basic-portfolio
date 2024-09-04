@@ -1,8 +1,9 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 body {
   font-family: "Press Start 2P", cursive;
   background-color: black;
+  color: white;
 }
 
 * {
@@ -12,27 +13,48 @@ body {
 }
 
 .title-container {
-  height: 30vh;
-  padding: 2%;
-  position: relative;
+  height: 100vh;
   overflow: hidden;
+  text-align: center;
+  position: relative;
 }
 
 .title-text {
-  font-size: 3vh;
+  font-size: 3vw;
   white-space: nowrap;
   display: inline-block;
   position: relative;
-  top: 5vh;
+  top: 7vw;
   color: transparent;
 }
-
 .title-text::before {
   content: "KAHEE's Portfolio!";
   position: absolute;
   color: white;
   overflow: hidden;
   animation: titleTxt 10s steps(30) infinite;
+}
+
+.pacman {
+  width: 8vw;
+  height: 8vw;
+  position: absolute;
+  top: 4vw;
+  animation: move 10s linear infinite;
+}
+.pacman::before, .pacman::after {
+  content: "";
+  border: 4vw solid yellow;
+  border-radius: 50%;
+  position: absolute;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  animation: mouthTop 0.7s ease infinite;
+}
+.pacman::after {
+  border-bottom-color: yellow;
+  border-top-color: transparent;
+  animation: mouthBottom 0.7s ease infinite;
 }
 
 @keyframes titleTxt {
@@ -45,29 +67,6 @@ body {
     opacity: 1;
   }
 }
-.pacman {
-  top: 2vh;
-  left: 0;
-  animation: move 10s linear infinite;
-}
-
-.pacman::before,
-.pacman::after {
-  content: "";
-  border: 30px solid yellow;
-  border-radius: 50%;
-  position: absolute;
-  border-left-color: transparent;
-  border-bottom-color: transparent;
-  animation: mouthTop 0.7s ease infinite;
-}
-
-.pacman::after {
-  border-bottom-color: yellow;
-  border-top-color: transparent;
-  animation: mouthBottom 0.7s ease infinite;
-}
-
 @keyframes mouthTop {
   50% {
     transform: rotate(-44deg);
@@ -80,10 +79,10 @@ body {
 }
 @keyframes move {
   0% {
-    transform: translateX(28%); /* 텍스트의 초기 위치 (오른쪽) */
+    transform: translateX(75vw); /* 텍스트의 오른쪽 끝에서 시작 */
   }
   100% {
-    transform: translateX(0%); /* 텍스트가 왼쪽으로 사라짐 */
+    transform: translateX(20vw); /* 텍스트의 왼쪽 끝으로 이동 */
   }
 }
 
