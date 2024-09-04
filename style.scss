@@ -1,108 +1,17 @@
-// @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
-
-// body {
-//   font-family: "Press Start 2P", cursive;
-//   background-color: black;
-//   color: white;
-// }
-
-// * {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-// }
-
-// .title-container {
-//   height: 100vh;
-//   overflow: hidden;
-//   text-align: center;
-//   position: relative;
-// }
-
-// .title-text {
-//   font-size: 3vw;
-//   white-space: nowrap;
-//   display: inline-block;
-//   position: relative;
-//   top: 7vw;
-//   color: transparent;
-// }
-
-// .title-text::before {
-//   content: "KAHEE's Portfolio!";
-//   position: absolute;
-//   color: white;
-//   overflow: hidden;
-//   animation: titleTxt 10s steps(30) infinite; /* 텍스트 애니메이션 */
-// }
-
-// .pacman {
-//   width: 8vw;
-//   height: 8vw;
-//   position: absolute;
-//   top: 4vw;
-//   animation: move 10s linear infinite; /* Pac-Man 애니메이션 */
-// }
-
-// .pacman::before,
-// .pacman::after {
-//   content: "";
-//   border: calc(8vw / 2) solid yellow;
-//   border-radius: 50%;
-//   position: absolute;
-//   border-left-color: transparent;
-//   border-bottom-color: transparent;
-//   animation: mouthTop 0.7s ease infinite; /* Pac-Man 입 애니메이션 */
-// }
-
-// .pacman::after {
-//   border-bottom-color: yellow;
-//   border-top-color: transparent;
-//   animation: mouthBottom 0.7s ease infinite; /* Pac-Man 입 애니메이션 */
-// }
-
-// @keyframes titleTxt {
-//   0% {
-//     width: 100%;
-//     opacity: 1;
-//   }
-//   100% {
-//     width: 0%;
-//     opacity: 1;
-//   }
-// }
-
-// @keyframes mouthTop {
-//   50% {
-//     transform: rotate(-44deg);
-//   }
-// }
-
-// @keyframes mouthBottom {
-//   50% {
-//     transform: rotate(44deg);
-//   }
-// }
-
-// @keyframes move {
-//   0% {
-//     transform: translateX(75vw);
-//   }
-//   100% {
-//     transform: translateX(20vw);
-//   }
-// }
-
-// scss
-
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 
 $pacman-size: 8vw;
-$title-text-top: 7vw;
-$pacman-top: 4vw;
+$title-text-top: 3vw;
+$pacman-top: 0vw;
 $title-text-font-size: 3vw;
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
+  width: 100%;
+  height: 100vh;
   font-family: "Press Start 2P", cursive;
   background-color: black;
   color: white;
@@ -114,8 +23,9 @@ body {
   box-sizing: border-box;
 }
 
+// title
 .title-container {
-  height: 100vh;
+  height: 18vh;
   overflow: hidden;
   text-align: center;
   position: relative;
@@ -188,9 +98,119 @@ body {
 
 @keyframes move {
   0% {
-    transform: translateX(75vw); /* 텍스트의 오른쪽 끝에서 시작 */
+    transform: translateX(73vw);
   }
   100% {
-    transform: translateX(20vw); /* 텍스트의 왼쪽 끝으로 이동 */
+    transform: translateX(20vw);
+  }
+}
+
+// BGM
+.audio {
+  margin: 1vw 0vh 0 86vw;
+  height: 3vh;
+  width: 13vw;
+}
+
+// toggle
+.toggleBtn-container {
+  margin: 15vh 0 10vh 0;
+  font-size: 2vw;
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+  }
+  li:hover {
+    cursor: pointer;
+    animation: ToggleBlinky 1s linear infinite;
+  }
+  li.active {
+    animation: ToggleBlinky 1s linear infinite;
+  }
+}
+
+@keyframes ToggleBlinky {
+  0% {
+    color: blue;
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    color: green;
+  }
+}
+
+// main
+.section-content {
+  display: none;
+}
+.section-content.active {
+  display: block;
+  width: 100%;
+}
+
+// about
+.about-container {
+}
+
+// skill
+.list-container {
+  display: flex;
+  margin: 1%;
+  flex-direction: row;
+  justify-content: space-around;
+
+  .list-title {
+    color: aqua;
+    font-weight: bold;
+    font-size: 3vh;
+  }
+
+  div {
+    width: 48%;
+    height: 40vh;
+    padding: 3% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    filter: brightness(50%);
+  }
+
+  div:hover {
+    border: 10px solid rgb(255, 151, 0);
+    box-shadow: 0 0 20px 8px rgb(255, 151, 0);
+    filter: brightness(100%);
+    animation: flightBox 2s ease-in-out infinite;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  li {
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 5px;
+    }
+    img:hover {
+      box-shadow: 0 0 20px 8px white;
+    }
+  }
+}
+
+@keyframes flightBox {
+  50% {
+    transform: translateY(-1vw);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

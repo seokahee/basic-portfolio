@@ -7,22 +7,63 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <audio autoplay controls class="audio">
-      <source src="music/8-bit-retro-game-music-233964.mp3" type="audio/mp3" />
-    </audio>
+    <audio
+      class="audio"
+      controls
+      src="music/8-bit-retro-game-music-233964.mp3"
+    ></audio>
 
     <header class="title-container">
       <h1 class="title-text">KAHEE's Portfolio!</h1>
       <div class="pacman"></div>
     </header>
 
-    <ul class="navUl">
-      <li>About Me</li>
-      <li>Skill</li>
-      <li>Project</li>
-      <li>Activities</li>
-    </ul>
+    <nav class="toggleBtn-container">
+      <ul>
+        <li class="toggleBtn" data-target="aboutSection">About</li>
+        <li class="toggleBtn" data-target="skillSection">Skill</li>
+        <li class="toggleBtn" data-target="projectSection">Project</li>
+        <li class="toggleBtn" data-target="activitiesSection">Activities</li>
+      </ul>
+    </nav>
 
-    <main></main>
+    <main>
+      <section id="aboutSection" class="section-content">
+        <div class="about-container">
+          이력서 유령 이 프로젝트에 대한 한 줄 소개 내 정보
+        </div>
+      </section>
+
+      <section id="skillSection" class="section-content">
+        <div class="list-container">
+          <div>
+            <p class="list-title">FrontEnd</p>
+            <ul id="frontend-list"></ul>
+          </div>
+          <div>
+            <p class="list-title">BackEnd</p>
+            <ul id="backend-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projectSection" class="section-content">
+        <p>Project</p>
+        <p>V-UP</p>
+      </section>
+
+      <section id="activitiesSection" class="section-content">
+        <p>Activities</p>
+        <p>스파르타</p>
+      </section>
+    </main>
+
+    <script src="index.js"></script>
   </body>
 </html>
+<!-- <audio
+class="audio"
+controls
+autoplay
+src="music/8-bit-retro-game-music-233964.mp3"
+></audio> -->
