@@ -22,7 +22,7 @@
       <ul>
         <li class="toggleBtn" data-target="aboutSection">About</li>
         <li class="toggleBtn" data-target="skillSection">Skill</li>
-        <li class="toggleBtn" data-target="projectSection">Project</li>
+        <li class="toggleBtn" data-target="projectsSection">Projects</li>
         <li class="toggleBtn" data-target="activitiesSection">Activities</li>
       </ul>
     </nav>
@@ -30,11 +30,14 @@
     <main>
       <section id="aboutSection" class="section-content">
         <div class="about-container">
+          <div class="about-itemContainer">
+            <div class="about-item"></div>
+          </div>
           <a
             href="https://drive.google.com/file/d/1keLx27mT3nRFR2mv9G3q-BVBYRGQ7y65/view?usp=sharing"
             target="_blank"
             class="resume"
-            >more information</a
+            >more information!</a
           >
         </div>
       </section>
@@ -52,18 +55,38 @@
         </div>
       </section>
 
-      <section id="projectSection" class="section-content">
-        <p>Project</p>
+      <section id="projectsSection" class="section-content">
+        <div class="carousel-container">
+          <div class="carousel">
+            <div class="cell">
+              <div class="project-logo">
+                <img src="/img/logo/vup.PNG" alt="v-up로고" />
+              </div>
+              <div class="vUp-detail">
+                <p>
+                  음악과 커뮤니티를 결합하여 취향에 맞는 음악을 추천하고 함께
+                  공유 하는 서비스입니다.
+                </p>
+                <p>활용 기술</p>
+                <ul id="vUp-list"></ul>
+              </div>
+            </div>
 
-        <p>V-UP</p>
+            <div class="cell">
+              <img src="/img/logo/none.PNG" alt="준비중 로고" />
+            </div>
+          </div>
+        </div>
+        <!-- <div class="carousel-btn">
+          <div class="prev-button">prev</div>
+          <div class="next-button">next</div>
+        </div> -->
       </section>
 
       <section id="activitiesSection" class="section-content">
-        <p>Activities</p>
         <p>스파르타</p>
       </section>
     </main>
-
     <script src="index.js"></script>
   </body>
 </html>

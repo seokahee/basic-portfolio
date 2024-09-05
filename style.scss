@@ -155,60 +155,170 @@ body {
 
 // about
 // .about-container {
-//   width: 90%;
+//   width: 50%;
 //   height: 40vh;
-//   background-color: #008080;
-//   box-shadow: 0 0 20px 8px #008080;
+//   padding: 1% 5%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-around;
+//   background-color: #4300ff;
+//   box-shadow: 0 0 5px 20px #4300ff;
+//   font-size: 1.6vw;
 
+//   // background-color: #3800d7de;
+//   // box-shadow: 0 0 5px 20px #3800d7de;
+
+//   .resume {
+//     margin-bottom: 3vh;
+//     text-decoration: none;
+//     color: white;
+//     text-align: center;
+//     font-size: 2vw;
+//     animation: flightBox 2s ease-in-out infinite;
+//   }
+//   .resume:hover {
+//     cursor: pointer;
+//     color: #15d200;
+//   }
+
+//   .about-item {
+//     display: flex;
+//     width: 100%;
+//     animation: typing 4s steps(50) forwards;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     color: #15d200;
+//   }
+// }
+
+// .about-container {
+//   width: 100%;
+//   height: 40vh;
 //   display: flex;
 //   flex-direction: column;
 //   align-items: center;
-//   justify-content: space-evenly;
+//   font-size: 1.6vw;
+
+//   .resume {
+//     margin-bottom: 5vh;
+//     text-decoration: none;
+//     text-align: center;
+//     font-size: 2.5vw;
+//     color: #e8e664;
+//     text-shadow: 0px 0px 20px #e8e664;
+//     animation: flightBox 2s ease-in-out infinite;
+//   }
+//   .resume:hover {
+//     cursor: pointer;
+//     color: #15d200;
+//   }
+//   .about-item {
+//     // width: 100%;
+//     // height: 100%;
+//     // display: flex;
+//     // flex-direction: column;
+//     // align-items: center;
+//     // justify-content: space-evenly;
+//     /* animation: typing 4s steps(50) forwards; */
+//     /* white-space: nowrap; */
+//     /* overflow: hidden; */
+
+//     width: 100%;
+//     height: 100%;
+//     display: flex;
+//     gap: 5vh;
+//     flex-direction: column;
+//     align-items: center;
+
+//     .title-box,
+//     .content-box {
+//       width: 100%;
+//       display: flex;
+//       justify-content: space-evenly;
+//       text-align: center;
+//     }
+//     .about-title {
+//       color: #b3352e;
+//     }
+//     // .title-box {
+//     //   display: flex;
+//     //   justify-content: space-evenly;
+//     //   width: 100%;
+
+//     //   .about-title {
+//     //     color: #b3352e;
+//     //   }
+//     // }
+//     // .content-box {
+//     //   font-size: 1vw;
+//     //   display: flex;
+//     //   width: 100%;
+//     //   justify-content: space-evenly;
+//     // }
+//   }
+// }
+// @keyframes typing {
+//   from {
+//     width: 0;
+//   }
 // }
 
 .about-container {
-  width: 50%;
+  width: 100%;
   height: 40vh;
-  padding: 1% 5%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  background-color: #4300ff;
-  box-shadow: 0 0 5px 20px #4300ff;
-  font-size: 1.6vw;
-
-  // background-color: #3800d7de;
-  // box-shadow: 0 0 5px 20px #3800d7de;
+  align-items: center;
+  gap: 15vh;
 
   .resume {
-    margin-bottom: 3vh;
     text-decoration: none;
-    color: white;
     text-align: center;
-    font-size: 2vw;
+    font-size: 3vw;
+    color: #e8e664;
+    text-shadow: 0px 0px 20px #e8e664;
     animation: flightBox 2s ease-in-out infinite;
   }
+
   .resume:hover {
     cursor: pointer;
     color: #15d200;
   }
 
-  .about-item {
+  .about-itemContainer {
+    width: 90%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-item {
     width: 100%;
-    animation: typing 4s steps(50) forwards;
-    white-space: nowrap;
-    overflow: hidden;
-    color: #15d200;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .about-valueBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+
+    .about-title {
+      font-size: 1.5vw;
+      color: #b3352e;
+    }
+
+    .about-content {
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #ffffff;
+      font-size: 1.5vw;
+      color: white;
+      transition: border 0.5s ease; /* 커서 사라짐 애니메이션 */
+    }
   }
 }
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
-
 // skill
 .list-container {
   width: 100%;
@@ -266,5 +376,82 @@ body {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+//project
+// #projectsSection {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+// .carousel-container {
+//   // width: 300px;
+//   // height: 300px;
+//   overflow: hidden;
+// }
+// .carousel {
+//   display: flex;
+//   transition: all 0.5s;
+
+//   img {
+//     width: 300px;
+//     height: 300px;
+//     border-radius: 5px;
+//   }
+
+//   .carousel {
+//     display: flex;
+//     transition: all 0.5s;
+//   }
+// }
+// .carousel-btn {
+//   width: 15%;
+//   margin-top: 1%;
+//   display: flex;
+//   justify-content: space-around;
+// }
+
+// .prev-button,
+// .next-button {
+//   cursor: pointer;
+//   padding: 5px;
+//   border-radius: 5px;
+//   border: 1px solid white;
+// }
+
+.carousel-container {
+  width: 100%;
+
+  .carousel {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .cell {
+    display: flex;
+    flex-direction: row;
+    // flex-wrap: wrap;
+  }
+  .cell img {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+  }
+  .project-logo {
+    width: 30%;
+  }
+  .vUp-detail ul {
+    list-style: none;
+  }
+  .vUp-detail img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
   }
 }
