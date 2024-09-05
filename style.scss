@@ -269,79 +269,320 @@ body {
   }
 }
 
+// project
+// .project-container {
+//   width: 80%;
+//   height: 43vh;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: space-evenly;
+//   perspective: 1000px;
+//   animation: scaleUp 2s ease-in-out;
+// }
+
+// .projectCard-container {
+//   width: 25%;
+//   height: 100%;
+//   position: relative;
+//   transform: rotateY(0deg);
+//   transition: transform 1s ease-in-out;
+//   transform-style: preserve-3d;
+// }
+
+// .card-side {
+//   width: 100%;
+//   height: 100%;
+//   position: absolute;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   border-radius: 5px;
+//   backface-visibility: hidden;
+
+//   a {
+//     text-decoration: none;
+//     font-size: 3vw;
+//   }
+// }
+
+// .project-front {
+//   background: #cc00ffcf;
+//   box-shadow: 0px 1px 20px 20px #8900ab;
+// }
+
+// .project-back {
+//   padding: 0 5%;
+//   display: flex;
+//   flex-direction: column;
+//   list-style: none;
+//   align-items: center;
+//   justify-content: space-around;
+//   transform: rotateY(180deg);
+//   background: rgb(20, 20, 20);
+//   font-size: 1vw;
+
+//   ul {
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 2vh;
+//     font-size: 0.8vw;
+//     list-style: none;
+//   }
+// }
+
+// .projectCard-container:hover {
+//   transform: rotateY(180deg);
+//   cursor: pointer;
+// }
+
+// @keyframes scaleUp {
+//   0% {
+//     transform: scale(var(--scale-start, 0.1));
+//     filter: brightness(50%);
+//   }
+//   100% {
+//     transform: scale(var(--scale-end, 1));
+//     filter: brightness(100%);
+//   }
+// }
+
+// .project-container {
+//   width: 80%;
+//   height: 43vh;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: space-evenly;
+//   perspective: 1000px;
+//   animation: flightProject 2s ease-in-out;
+// }
+
+// .projectCard-container {
+//   width: 25%;
+//   height: 100%;
+//   position: relative;
+//   transform: rotateY(0deg);
+//   transition: transform 1s ease-in-out;
+//   transform-style: preserve-3d;
+// }
+
+// .card-side {
+//   width: 100%;
+//   height: 100%;
+//   position: absolute;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   border-radius: 5px;
+//   backface-visibility: hidden;
+
+//   a {
+//     text-decoration: none;
+//     font-size: 3vw;
+//   }
+// }
+
+// .project-front {
+//   background: #cc00ffcf;
+//   box-shadow: 0px 1px 20px 20px #8900ab;
+// }
+
+// .project-back {
+//   padding: 0 5%;
+//   display: flex;
+//   flex-direction: column;
+//   list-style: none;
+//   align-items: center;
+//   justify-content: space-around;
+//   transform: rotateY(180deg);
+//   background: rgb(20, 20, 20);
+//   font-size: 1vw;
+
+//   ul {
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 2vh;
+//     font-size: 0.8vw;
+//     list-style: none;
+//   }
+// }
+
+// .projectCard-container:hover {
+//   transform: rotateY(180deg);
+//   cursor: pointer;
+// }
+
+// @keyframes scaleUp {
+//   0% {
+//     transform: scale(var(--scale-start, 0.1));
+//     filter: brightness(50%);
+//   }
+//   100% {
+//     transform: scale(var(--scale-end, 1));
+//     filter: brightness(100%);
+//   }
+// }
+
 .project-container {
   width: 80%;
-  height: 43vh;
+  height: 15vh;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  perspective: 700px;
-  animation: scaleUp 2s ease-in-out;
   flex-direction: row;
-}
-
-.projectCard-container {
-  width: 25%;
-  height: 100%;
-  position: relative;
-  transform: rotateY(0deg);
-  transition: 1s;
-  transform-style: preserve-3d;
-}
-
-.card-side {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  border-radius: 5px;
-  backface-visibility: hidden;
-
-  img {
-    width: 90%;
-  }
-}
-
-.project-front {
-  background: #cc00ffcf;
-  box-shadow: 0px 1px 20px 20px #8900ab;
-}
-
-.project-back {
-  padding: 0 5%;
-  display: flex;
-  flex-direction: column;
-  list-style: none;
   align-items: center;
-  justify-content: space-around;
-  transform: rotateY(180deg);
-  background: rgb(34, 34, 34);
-  box-shadow: 1px 1px 20px 20px #3d3d3d;
-  font-size: 1vw;
+  // animation: flightProject 2s ease-in-out;
 
-  ul {
-    width: 100%;
+  .project-title {
+    width: 20%;
+    font-size: 4vw;
+  }
+  .project-content {
+    font-size: 2vw;
+  }
+  .project-detail {
+    width: 70%;
+    height: 100%;
     display: flex;
+    align-items: center;
     flex-direction: column;
-    gap: 2vh;
-    font-size: 0.8vw;
-    list-style: none;
+    gap: 7vh;
+  }
+
+  //   .project-tech {
+  //     display: flex;
+  //     width: 70%;
+  //     height: 100%;
+  //     gap: 1vw;
+  //     align-items: center;
+
+  //     li {
+  //       list-style: none;
+  //       -webkit-font-smoothing: antialiased;
+  //       position: relative;
+  //       top: 20px;
+  //       display: inline-block;
+  //       animation: bounce 0.3s ease infinite alternate;
+  //       box-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+  //         0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent,
+  //         0 8px 0 transparent, 0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+
+  //       img {
+  //         width: 50px;
+  //         height: 50px;
+  //         border-radius: 10px;
+  //       }
+  //     }
+
+  //     .project-tech li:nth-child(2) {
+  //       animation-delay: 0.1s;
+  //     }
+  //     .project-tech li img:nth-child(3) {
+  //       animation-delay: 0.2s;
+  //     }
+  //     .project-tech li img:nth-child(4) {
+  //       animation-delay: 0.3s;
+  //     }
+  //     .project-tech li img:nth-child(5) {
+  //       animation-delay: 0.4s;
+  //     }
+  //     .project-tech li img:nth-child(6) {
+  //       animation-delay: 0.5s;
+  //     }
+  //     .project-tech li img:nth-child(7) {
+  //       animation-delay: 0.6s;
+  //     }
+  //   }
+  // }
+
+  // @keyframes bounce {
+  //   100% {
+  //     top: -20px;
+  //     box-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+  //       0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc,
+  //       0 50px 25px rgba(0, 0, 0, 0.2);
+  //   }
+  // }
+
+  .project-tech {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+
+    li {
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      top: 1vh;
+      display: inline-block;
+      border-radius: 10px;
+      list-style: none;
+      animation: flightProject 2s ease-in-out,
+        bounce 0.4s 0.5s ease infinite alternate;
+
+      img {
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+      }
+    }
+  }
+  .visit-btn {
+    width: 70%;
+    padding: 2vw;
+    text-align: center;
+    text-decoration: none;
+    background-color: #3d3a00;
+    box-shadow: 1px 1px 20px #fff500;
+    border: 1px solid #fff500;
+    color: #15d200;
+    border-radius: 5px;
+    font-size: 2.5vw;
+  }
+
+  .visit-btn:hover {
+    color: #15d200;
+    background-color: #fff400;
+    box-shadow: 1px 1px 20px #fff500;
+  }
+
+  .project-tech li:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .project-tech li:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .project-tech li:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  .project-tech li:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+  .project-tech li:nth-child(6) {
+    animation-delay: 0.5s;
+  }
+  .project-tech li:nth-child(7) {
+    animation-delay: 0.6s;
+  }
+
+  @keyframes bounce {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -20px;
+      // box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
+    }
   }
 }
-
-.projectCard-container:hover {
-  transform: rotateY(180deg);
-}
-
-@keyframes scaleUp {
+@keyframes flightProject {
   0% {
-    transform: scale(var(--scale-start, 0.1));
-    filter: brightness(50%);
+    transform: translateY(20vw);
   }
   100% {
-    transform: scale(var(--scale-end, 1));
-    filter: brightness(100%);
+    transform: translateY(0);
   }
 }

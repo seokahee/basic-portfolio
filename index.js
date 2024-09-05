@@ -173,88 +173,129 @@ backendImages.forEach((image) => {
 });
 
 // project
-
 // 카드색
-const cardColors = ["#cc00ffcf", "#FFF"];
-const cardShadow = ["#8900ab", "rgb(109 201 255)"];
+// const frontColors = ["rgb(20 20 20)", "rgb(219 219 219)"];
+// const frontShadow = ["rgb(110 0 0)", "rgb(0 102 162)"];
 
-const projects = [
-  {
-    imgSrc: "/img/logo/vup.PNG",
-    imgAlt: "v-up 로고",
-    description: "음악과 커뮤니티 결합 서비스",
-    tech: [
-      "Next.js",
-      "React",
-      "Typescript",
-      "Javascript",
-      "Supabase",
-      "Zustand",
-      "TanStack-Query",
-      "Tailwind CSS",
-      "React-h5-audio-player",
-      "Sweetalert",
-    ],
-  },
-  {
-    imgSrc: "/img/logo/bookpang.png",
-    imgAlt: "준비중",
-    description: "준비중 입니다.",
-    tech: [
-      "Next.js",
-      "React",
-      "Typescript",
-      "Javascript",
-      "Zustand",
-      "TanStack-Query",
-    ],
-  },
+// // const backColors = ["rgb(20 20 20)", "#FFF"];
+// const backShadow = ["rgb(110 0 0)", "rgb(0 102 162)"];
+
+// const projects = [
+//   {
+//     projectName: "V-Up",
+//     projectLink: "https://re-v-up-ver-3.vercel.app/",
+//     description: "음악과 커뮤니티 결합 서비스",
+//     tech: [
+//       "Next.js",
+//       "React",
+//       "Typescript",
+//       "Javascript",
+//       "Supabase",
+//       "Zustand",
+//       "TanStack-Query",
+//       "Tailwind CSS",
+//       "React-h5-audio-player",
+//       "Sweetalert",
+//     ],
+//   },
+//   {
+//     projectName: "BookPang",
+//     projectLink: "",
+//     description: "준비중 입니다.",
+//     tech: [
+//       "Next.js",
+//       "React",
+//       "Typescript",
+//       "Javascript",
+//       "Zustand",
+//       "TanStack-Query",
+//     ],
+//   },
+// ];
+
+// // 카드 생성하는 함수
+// function createProjectCards() {
+//   const container = document.querySelector(".project-container");
+//   projects.forEach((project, index) => {
+//     // 카드 컨테이너
+//     const cardContainer = document.createElement("div");
+//     cardContainer.classList.add("projectCard-container");
+
+//     // 앞면 카드
+//     const frontCard = document.createElement("div");
+//     frontCard.classList.add("card-side", "project-front");
+
+//     // 링크가 있을 때만 <a> 태그 생성
+//     if (project.projectLink) {
+//       const logoLink = document.createElement("a");
+//       logoLink.href = project.projectLink;
+//       logoLink.target = "_blank"; // 새로운 탭에서 열기
+
+//       const projectTitle = document.createElement("h3");
+//       projectTitle.innerText = project.projectName;
+
+//       logoLink.appendChild(projectTitle);
+//       frontCard.appendChild(logoLink);
+//     } else {
+//       const projectTitle = document.createElement("h3");
+//       projectTitle.innerText = project.projectName;
+//       frontCard.appendChild(projectTitle);
+//     }
+
+//     // 뒷면 카드
+//     const backCard = document.createElement("div");
+//     backCard.classList.add("card-side", "project-back");
+//     const description = document.createElement("p");
+//     description.textContent = project.description;
+//     const techList = document.createElement("ul");
+//     project.tech.forEach((tech) => {
+//       const li = document.createElement("li");
+//       li.textContent = tech;
+//       techList.appendChild(li);
+//     });
+//     backCard.appendChild(description);
+//     backCard.appendChild(techList);
+
+//     // 카드 컨테이너에 앞면과 뒷면 추가
+//     cardContainer.appendChild(frontCard);
+//     cardContainer.appendChild(backCard);
+
+//     // 카드의 배경색 및 그림자 적용
+//     frontCard.style.background = frontColors[index % frontColors.length];
+//     frontCard.style.boxShadow = `0px 1px 20px 20px ${
+//       frontShadow[index % frontShadow.length]
+//     }`;
+
+//     // backCard.style.background = backColors[index % backColors.length];
+//     backCard.style.boxShadow = `0px 1px 20px 20px ${
+//       backShadow[index % backShadow.length]
+//     }`;
+
+//     // 전체 프로젝트 컨테이너에 카드 추가
+//     container.appendChild(cardContainer);
+//   });
+// }
+
+// // 카드를 페이지 로드 시 생성
+// window.onload = createProjectCards;
+
+const container = document.querySelector(".project-tech");
+
+const vUPImages = [
+  { src: "/img/icons/next.png", alt: "Next.js" },
+  { src: "/img/icons/js.png", alt: "JavaScript" },
+  { src: "/img/icons/ts.png", alt: "Typescript" },
+  { src: "/img/icons/zustand.png", alt: "Zustand" },
+  { src: "/img/icons/query.png", alt: "TanStack-Query" },
+  { src: "/img/icons/tailwind.png", alt: "Tailwind css" },
+  { src: "/img/icons/supa.png", alt: "supabase" },
 ];
 
-// 카드 생성하는 함수
-function createProjectCards() {
-  const container = document.querySelector(".project-container");
-  projects.forEach((project, index) => {
-    // 카드 컨테이너
-    const cardContainer = document.createElement("div");
-    cardContainer.classList.add("projectCard-container");
-
-    // 앞면 카드
-    const frontCard = document.createElement("div");
-    frontCard.classList.add("card-side", "project-front");
-    const img = document.createElement("img");
-    img.src = project.imgSrc;
-    img.alt = project.imgAlt;
-    frontCard.appendChild(img);
-
-    // 뒷면 카드
-    const backCard = document.createElement("div");
-    backCard.classList.add("card-side", "project-back");
-    const description = document.createElement("p");
-    description.textContent = project.description;
-    const techList = document.createElement("ul");
-    project.tech.forEach((tech) => {
-      const li = document.createElement("li");
-      li.textContent = tech;
-      techList.appendChild(li);
-    });
-    backCard.appendChild(description);
-    backCard.appendChild(techList);
-
-    // 카드 컨테이너에 앞면과 뒷면 추가
-    cardContainer.appendChild(frontCard);
-    cardContainer.appendChild(backCard);
-
-    // 카드의 배경색 및 그림자 적용
-    frontCard.style.background = cardColors[index % cardColors.length];
-    frontCard.style.boxShadow = `0px 1px 20px 20px ${
-      cardShadow[index % cardShadow.length]
-    }`;
-
-    // 전체 프로젝트 컨테이너에 카드 추가
-    container.appendChild(cardContainer);
-  });
-}
-
-// 카드를 페이지 로드 시 생성
-window.onload = createProjectCards;
+vUPImages.forEach((image) => {
+  const li = document.createElement("li");
+  const img = document.createElement("img");
+  img.src = image.src;
+  img.alt = image.alt;
+  li.appendChild(img);
+  container.appendChild(li);
+});
