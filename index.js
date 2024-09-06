@@ -55,6 +55,10 @@ toggleBtns.forEach((btn) => {
               content.classList.add("about-content");
               content.classList.add("typing-animation"); // 애니메이션 클래스 추가
 
+              if (item.content === "서가희") {
+                content.classList.add("about-name");
+              }
+
               div.appendChild(title);
               div.appendChild(content);
 
@@ -79,51 +83,6 @@ toggleBtns.forEach((btn) => {
               }, index * (initialDelay + delay * item.content.length)); // 각 항목에 초기 지연을 적용
             });
           }, startDelay); // 전체 애니메이션 시작 전 지연
-
-          // Skill
-          const frontendImages = [
-            { src: "/img/icons/next.png", alt: "Next.js" },
-            { src: "/img/icons/js.png", alt: "JavaScript" },
-            { src: "/img/icons/ts.png", alt: "Typescript" },
-            { src: "/img/icons/redux.png", alt: "Redux" },
-            { src: "/img/icons/zustand.png", alt: "Zustand" },
-            { src: "/img/icons/axios.png", alt: "Axios" },
-            { src: "/img/icons/query.png", alt: "TanStack-Query" },
-            { src: "/img/icons/tailwind.png", alt: "Tailwind css" },
-            { src: "/img/icons/style.png", alt: "Styled-components" },
-          ];
-
-          const backendImages = [
-            { src: "/img/icons/Java.png", alt: "Java" },
-            { src: "/img/icons/cat.png", alt: "Apache Tomcat" },
-            { src: "/img/icons/oracle.png", alt: "Oracle" },
-            { src: "/img/icons/sql.png", alt: "SQL" },
-            { src: "/img/icons/my.png", alt: "MySQL" },
-          ];
-
-          const frontendList = document.getElementById("frontend-list");
-          const backendList = document.getElementById("backend-list");
-
-          frontendList.innerHTML = ""; // 기존 목록 제거
-          backendList.innerHTML = "";
-
-          frontendImages.forEach((image) => {
-            const li = document.createElement("li");
-            const img = document.createElement("img");
-            img.src = image.src;
-            img.alt = image.alt;
-            li.appendChild(img);
-            frontendList.appendChild(li);
-          });
-
-          backendImages.forEach((image) => {
-            const li = document.createElement("li");
-            const img = document.createElement("img");
-            img.src = image.src;
-            img.alt = image.alt;
-            li.appendChild(img);
-            backendList.appendChild(li);
-          });
         }
       }
     }
@@ -262,13 +221,106 @@ backendImages.forEach((image) => {
 
 //     // 카드의 배경색 및 그림자 적용
 //     frontCard.style.background = frontColors[index % frontColors.length];
-//     frontCard.style.boxShadow = `0px 1px 20px 20px ${
-//       frontShadow[index % frontShadow.length]
-//     }`;
+//     // frontCard.style.boxShadow = `0px 1px 20px 20px ${
+//     //   frontShadow[index % frontShadow.length]
+//     // }`;
 
-//     // backCard.style.background = backColors[index % backColors.length];
-//     backCard.style.boxShadow = `0px 1px 20px 20px ${
-//       backShadow[index % backShadow.length]
+//     // // backCard.style.background = backColors[index % backColors.length];
+//     // backCard.style.boxShadow = `0px 1px 20px 20px ${
+//     //   backShadow[index % backShadow.length]
+//     // }`;
+
+//     // 전체 프로젝트 컨테이너에 카드 추가
+//     container.appendChild(cardContainer);
+//   });
+// }
+
+// // 카드를 페이지 로드 시 생성
+// window.onload = createProjectCards;
+
+// // 통통
+// const container = document.querySelector(".project-tech");
+
+// const vUPImages = [
+//   { src: "/img/icons/next.png", alt: "Next.js" },
+//   { src: "/img/icons/js.png", alt: "JavaScript" },
+//   { src: "/img/icons/ts.png", alt: "Typescript" },
+//   { src: "/img/icons/redux.png", alt: "Redux" },
+//   { src: "/img/icons/zustand.png", alt: "Zustand" },
+//   { src: "/img/icons/query.png", alt: "TanStack-Query" },
+//   { src: "/img/icons/tailwind.png", alt: "Tailwind css" },
+//   { src: "/img/icons/supa.png", alt: "supabase" },
+// ];
+
+// vUPImages.forEach((image) => {
+//   const li = document.createElement("li");
+//   const img = document.createElement("img");
+//   img.src = image.src;
+//   img.alt = image.alt;
+//   li.appendChild(img);
+//   container.appendChild(li);
+// });
+
+// 카드 확대 후 gif로 변환
+
+// 카드 색상 및 그림자
+// const cardColors = ["rgb(20, 20, 20)", "rgb(219, 219, 219)"];
+// const cardShadow = ["rgb(110, 0, 0)", "rgb(0, 102, 162)"];
+
+// const projects = [
+//   {
+//     projectName: "V-Up",
+//     img: "/img/gif/vUP.gif",
+//     imgArl: "V-UP Gif",
+//     ProjectLink: "https://re-v-up-ver-3.vercel.app/",
+//   },
+//   {
+//     projectName: "Another Project",
+//     img: "/img/gif/another.gif",
+//     imgArl: "Another Gif",
+//     ProjectLink: "https://example.com/",
+//   },
+// ];
+
+// function createProjectCards() {
+//   const container = document.querySelector(".project-container");
+//   projects.forEach((project, index) => {
+//     // 카드 컨테이너
+//     const cardContainer = document.createElement("div");
+//     cardContainer.classList.add("projectCard-container");
+
+//     // 카드
+//     const card = document.createElement("div");
+//     card.classList.add("project-card");
+
+//     // 프로젝트 이름(텍스트)
+//     const projectName = document.createElement("p");
+//     projectName.classList.add("project-name");
+//     projectName.innerHTML = project.projectName;
+
+//     // 프로젝트 이미지
+//     const projectImg = document.createElement("img");
+//     projectImg.classList.add("project-img");
+//     projectImg.src = project.img; // 수정된 부분
+//     projectImg.alt = project.imgArl;
+
+//     // 프로젝트 링크
+//     const projectLink = document.createElement("a");
+//     projectLink.classList.add("project-link");
+//     projectLink.href = project.ProjectLink;
+//     projectLink.target = "_blank";
+//     projectLink.appendChild(projectImg);
+
+//     card.appendChild(projectName);
+//     card.appendChild(projectLink);
+
+//     // 카드 컨테이너에 카드 추가
+//     cardContainer.appendChild(card);
+
+//     // 카드의 배경색 및 그림자 적용
+//     card.style.background = cardColors[index % cardColors.length];
+//     card.style.boxShadow = `0px 1px 20px 20px ${
+//       cardShadow[index % cardShadow.length]
 //     }`;
 
 //     // 전체 프로젝트 컨테이너에 카드 추가
@@ -279,23 +331,170 @@ backendImages.forEach((image) => {
 // // 카드를 페이지 로드 시 생성
 // window.onload = createProjectCards;
 
-const container = document.querySelector(".project-tech");
+// const cardColors = ["rgb(20 20 20)", "rgb(20 20 20)"];
+// const cardShadow = ["rgb(152 56 0)", "rgb(152 56 0)"];
 
-const vUPImages = [
-  { src: "/img/icons/next.png", alt: "Next.js" },
-  { src: "/img/icons/js.png", alt: "JavaScript" },
-  { src: "/img/icons/ts.png", alt: "Typescript" },
-  { src: "/img/icons/zustand.png", alt: "Zustand" },
-  { src: "/img/icons/query.png", alt: "TanStack-Query" },
-  { src: "/img/icons/tailwind.png", alt: "Tailwind css" },
-  { src: "/img/icons/supa.png", alt: "supabase" },
+// const projects = [
+//   {
+//     projectName: "V-Up",
+//     img: "/img/gif/vUP.gif",
+//     imgArl: "V-UP Gif",
+//     ProjectLink: "https://re-v-up-ver-3.vercel.app/",
+//   },
+//   {
+//     projectName: "BookPang",
+//     img: "",
+//     imgArl: "none",
+//     ProjectLink: "https://re-v-up-ver-3.vercel.app/",
+//   },
+// ];
+
+// function createProjectCards() {
+//   const container = document.querySelector(".project-container");
+//   projects.forEach((project, index) => {
+//     // 카드
+//     const card = document.createElement("div");
+//     card.classList.add("project-card");
+
+//     // 프로젝트 이름(텍스트)
+//     const projectName = document.createElement("p");
+//     projectName.classList.add("project-name");
+//     projectName.innerHTML = project.projectName;
+
+//     // 프로젝트 이미지
+//     const projectImg = document.createElement("img");
+//     projectImg.classList.add("project-img");
+//     projectImg.src = project.img;
+//     projectImg.alt = project.imgArl;
+
+//     // 프로젝트 링크
+//     const projectLink = document.createElement("a");
+//     projectLink.href = project.ProjectLink;
+//     projectLink.target = "_blank";
+//     projectLink.appendChild(projectImg);
+
+//     card.appendChild(projectName);
+//     card.appendChild(projectLink);
+
+//     // 카드 컨테이너에 추가
+//     // cardContainer.appendChild(card);
+
+//     // 카드의 배경색 및 그림자 적용
+//     card.style.background = cardColors[index % cardColors.length];
+//     card.style.boxShadow = `0px 1px 20px 20px ${
+//       cardShadow[index % cardShadow.length]
+//     }`;
+
+//     // 전체 프로젝트 컨테이너에 카드 추가
+//     container.appendChild(card);
+//   });
+// }
+
+// // 카드를 페이지 로드 시 생성
+// window.onload = createProjectCards;
+
+// // 오버레이
+// const container = document.querySelector(".project-container");
+// const overlay = document.querySelector(".overlay");
+
+// container.addEventListener("mouseover", (event) => {
+//   if (event.target.closest(".project-card")) {
+//     overlay.classList.add("active");
+//   }
+// });
+
+// container.addEventListener("mouseout", (event) => {
+//   if (event.target.closest(".project-card")) {
+//     overlay.classList.remove("active");
+//   }
+// });
+
+const cardColors = ["rgb(20 20 20)", "rgb(20 20 20)"];
+const cardShadow = ["rgb(255 0 0)", "#0bff00"];
+const cardBorder = ["rgb(255 0 0)", "#0bff00"];
+
+const projects = [
+  {
+    projectName: "V-Up",
+    img: "/img/gif/vUP.gif",
+    imgArl: "V-UP",
+    ProjectLink: "https://re-v-up-ver-3.vercel.app/",
+  },
+  {
+    projectName: "BookPang",
+    img: "/img/gif/BookPang.gif",
+    imgArl: "BookPang",
+    ProjectLink: "",
+  },
 ];
 
-vUPImages.forEach((image) => {
-  const li = document.createElement("li");
-  const img = document.createElement("img");
-  img.src = image.src;
-  img.alt = image.alt;
-  li.appendChild(img);
-  container.appendChild(li);
+function createProjectCards() {
+  const container = document.querySelector(".project-container");
+  projects.forEach((project, index) => {
+    const card = document.createElement("div");
+    card.classList.add("project-card");
+
+    const projectName = document.createElement("p");
+    projectName.classList.add("project-name");
+    projectName.textContent = project.projectName;
+
+    const projectImg = document.createElement("img");
+    projectImg.classList.add("project-img");
+    projectImg.src = project.img;
+    projectImg.alt = project.imgArl;
+
+    const projectLink = document.createElement("a");
+    projectLink.href = project.ProjectLink;
+    projectLink.target = "_blank";
+    projectLink.appendChild(projectImg);
+
+    card.appendChild(projectName);
+    card.appendChild(projectLink);
+
+    // 카드 스타일 저장
+    const bgColor = cardColors[index % cardColors.length];
+
+    const boxShadow = `0px 1px 20px 5px ${
+      cardShadow[index % cardShadow.length]
+    }`;
+    const border = `5px solid ${cardBorder[index % cardBorder.length]}`;
+
+    card.style.bgColor = bgColor;
+    card.style.boxShadow = boxShadow;
+    card.style.border = border;
+
+    // dataset = 카드의 원래 색과 그림자를 저장
+    card.dataset.backgroundColor = bgColor;
+    card.dataset.boxShadow = boxShadow;
+    card.dataset.border = border;
+
+    container.appendChild(card);
+  });
+}
+
+window.onload = createProjectCards;
+
+const container = document.querySelector(".project-container");
+const overlay = document.querySelector(".overlay");
+
+container.addEventListener("mouseover", (event) => {
+  const card = event.target.closest(".project-card"); // 이벤트 타겟 찾기
+  if (card) {
+    overlay.classList.add("active");
+    container.classList.remove("active");
+
+    card.style.boxShadow = "none";
+    card.style.border = "none";
+  }
+});
+
+container.addEventListener("mouseout", (event) => {
+  const card = event.target.closest(".project-card");
+  if (card) {
+    overlay.classList.remove("active");
+    container.classList.add("active");
+
+    card.style.boxShadow = card.dataset.boxShadow;
+    card.style.border = card.dataset.border;
+  }
 });
