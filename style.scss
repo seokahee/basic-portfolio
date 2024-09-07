@@ -9,7 +9,6 @@ $pacman-top: 0vw;
 $pacman-size: 8vw;
 $title-text-top: 3vw;
 $title-text-font-size: 3vw;
-$hangul-font: "DungGeunMo";
 
 ::-webkit-scrollbar {
   display: none; // 스크롤바 숨김
@@ -27,6 +26,73 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+// BGM
+.music-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 1;
+}
+
+.music-box.active {
+  opacity: 0;
+}
+
+.soundOn-Containnr {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .soundOn-choiceContainnr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20vh;
+  }
+  .choice-title {
+    font-size: 7vw;
+    color: #2ac600;
+    text-shadow: 1px 1px 20px #2fe000;
+  }
+  .sound-choiceItem {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15vw;
+  }
+
+  .sound-choice {
+    border: none;
+    background: transparent;
+    font-size: 4vw;
+    transform: scale(1.3);
+    transition: transform 0.3s;
+    z-index: 2;
+  }
+
+  .sound-choice:hover {
+    cursor: pointer;
+    text-shadow: 1px 1px 20px rgb(255 188 0);
+    color: rgb(255, 188, 0);
+    transform: scale(2);
+    transition: transform 0.3s;
+  }
+}
+.music-player {
+  // margin: 1vw 0vh 0 86vw;
+  // height: 3vh;
+  // width: 13vw;
 }
 
 // title
@@ -111,16 +177,9 @@ body {
   }
 }
 
-// BGM
-.audio {
-  margin: 1vw 0vh 0 86vw;
-  height: 3vh;
-  width: 13vw;
-}
-
 // toggle
 .toggleBtn-container {
-  margin: 15vh 0 10vh 0;
+  margin-top: 12vh;
   font-size: 2vw;
 
   ul {
@@ -130,14 +189,14 @@ body {
   }
   li:hover {
     cursor: pointer;
-    animation: ToggleBlinky 1s linear infinite;
+    animation: ToggleBlinking 1s linear infinite;
   }
   li.active {
-    animation: ToggleBlinky 1s linear infinite;
+    animation: ToggleBlinking 1s linear infinite;
   }
 }
 
-@keyframes ToggleBlinky {
+@keyframes ToggleBlinking {
   0% {
     color: blue;
   }
@@ -161,11 +220,13 @@ body {
 
 // about
 .about-container {
-  width: 100%;
+  width: 90%;
   height: 40vh;
+  margin-top: 6%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 15vh;
 
   .resume {
@@ -183,7 +244,7 @@ body {
   }
 
   .about-itemContainer {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -217,17 +278,19 @@ body {
   }
 
   .about-name {
-    font-family: $hangul-font;
     font-weight: bold;
   }
 }
 // skill
 .list-container {
   width: 100%;
+  height: 40vh;
+  margin-top: 7%;
+  padding: 0 1%;
   display: flex;
-  margin: 1%;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 
   .list-title {
     color: aqua;
@@ -285,7 +348,7 @@ body {
 .project-container {
   width: 100%;
   height: 40vh;
-  margin-top: 5%;
+  margin-top: 10%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -341,6 +404,7 @@ body {
 .project-container.active {
   animation: flightBox 2s ease-in-out infinite;
 }
+
 .overlay {
   position: absolute;
   top: 0;
@@ -357,4 +421,198 @@ body {
 .overlay.active {
   opacity: 1;
   pointer-events: auto;
+}
+
+// activities
+
+.activities-container {
+  width: 90%;
+  height: 55vh;
+  margin-top: 3%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.3vw;
+  padding: 2%;
+  animation: noise 0.2s 0.5s ease-in 4 forwards;
+  // filter: brightness(50%);
+  opacity: 0;
+  visibility: hidden;
+  animation: activitiesBlinking 3s 2.5s ease-in forwards;
+
+  .activities-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+  }
+
+  // .activities-item:hover {
+  //   filter: brightness(100%);
+  // }
+
+  .activities-section {
+    font-size: 1.8vw;
+    color: blue;
+  }
+
+  // p {
+  //   animation: activitiesBlinking 0.1s 5.5s ease-in 35 forwards;
+  // }
+}
+
+@keyframes activitiesBlinking {
+  100% {
+    opacity: 1;
+    visibility: visible; /* 끝나면 보임 */
+  }
+}
+// @keyframes activitiesBlinking {
+//   50% {
+//     color: transparent;
+//   }
+// }
+
+// @keyframes noise {
+//   50% {
+//     background-image: url("/img/gif/noise.gif");
+//     background-size: 60%;
+//   }
+// }
+//
+// 트랜지션 브라우저 설정
+// -webkit-transform: scale(1.2); /* 크롬, 사파리 */
+// -moz-transform: scale(1.2);  /* 파이어폭스 */
+// -ms-transform: scale(1.2); /* IE */
+// -o-transform: scale(1.2);  /* 오페라 */
+
+.ghost {
+  position: absolute;
+  top: 50%;
+  // z-index: 99;
+  left: 0%;
+  height: 8.7%;
+  width: 3%;
+  background: red;
+  border-top-left-radius: 70px;
+  border-top-right-radius: 70px;
+  animation: showGhost 1s ease-out forwards, ghostMove 5s 1.3s linear forwards,
+    ghostBlinking 0.4s linear infinite;
+  transform: scale(1.7);
+  cursor: pointer;
+}
+
+.ghost::before,
+.ghost::after {
+  position: absolute;
+  // z-index: 99;
+  content: "";
+  top: 20%;
+  left: 7%;
+  height: 36%;
+  width: 35%;
+  border-radius: 50%;
+  background: white;
+}
+
+.ghost::after {
+  left: 50%;
+}
+
+.eyes::before,
+.eyes::after {
+  position: absolute;
+  content: "";
+  height: 14%;
+  width: 14%;
+  background: blue;
+  border-radius: 100%;
+  top: 36%;
+  right: 68%;
+  // z-index: 99;
+  animation: eyeLeft 0.7s 0.5s ease-in infinite;
+}
+
+.eyes::after {
+  animation: eyeRight 0.7s 0.5s ease-in infinite;
+  z-index: 1;
+  right: 25%;
+}
+
+.skirt,
+.skirt::before,
+.skirt::after {
+  position: absolute;
+  height: 0;
+  width: 0;
+  border: 10px solid rgb(0, 0, 0);
+  border-top-color: transparent;
+  bottom: -1%;
+}
+.skirt::before {
+  content: "";
+  left: 0.5vw;
+  bottom: -0.5vw;
+}
+
+.skirt::after {
+  content: "";
+  left: 1.5vw;
+  bottom: -0.5vw;
+}
+
+@keyframes showGhost {
+  0%,
+  10% {
+    top: 60%;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes ghostMove {
+  0% {
+    left: 0%;
+  }
+  25% {
+    top: 45%;
+    transform: scale(5);
+  }
+  50% {
+    top: 75%;
+    transform: scale(2);
+  }
+  75% {
+    top: 45%;
+    transform: scale(5);
+  }
+  100% {
+    top: 70%;
+    left: 90%;
+  }
+}
+
+@keyframes ghostBlinking {
+  50% {
+    background: hotpink;
+  }
+}
+
+@keyframes eyeLeft {
+  0%,
+  100% {
+    left: 15%;
+  }
+  50% {
+    left: 25%;
+  }
+}
+
+@keyframes eyeRight {
+  0%,
+  100% {
+    left: 55%;
+  }
+
+  50% {
+    left: 65%;
+  }
 }
