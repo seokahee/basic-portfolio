@@ -22,66 +22,67 @@ body {
   box-sizing: border-box;
 }
 
-.music-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  z-index: 1;
+#audio {
+  display: none; /* 기본 오디오 컨트롤 숨김 */
 }
 
-.music-box.active {
-  opacity: 0;
-}
-
-.soundOn-Containnr {
+.initial-container {
   width: 100%;
   height: 100%;
+  z-index: 99;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: space-evenly;
+  position: absolute;
+  background: black;
 }
-.soundOn-Containnr .soundOn-choiceContainnr {
+.initial-container .initial-settings {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   gap: 20vh;
 }
-.soundOn-Containnr .choice-title {
+.initial-container .initial-title {
   font-size: 7vw;
-  color: #2ac600;
+  color: #36ff00;
   text-shadow: 1px 1px 20px #2fe000;
 }
-.soundOn-Containnr .sound-choiceItem {
-  width: 100%;
-  height: 100%;
+.initial-container .choice-item {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 15vw;
+  justify-content: space-evenly;
 }
-.soundOn-Containnr .sound-choice {
-  border: none;
-  background: transparent;
-  font-size: 4vw;
-  transform: scale(1.3);
-  transition: transform 0.3s;
-  z-index: 2;
+.initial-container .sound-choice {
+  font-size: 5vw;
 }
-.soundOn-Containnr .sound-choice:hover {
+.initial-container .sound-choice:hover {
   cursor: pointer;
-  text-shadow: 1px 1px 20px rgb(255, 188, 0);
-  color: rgb(255, 188, 0);
-  transform: scale(2);
+  text-shadow: 1px 1px 20px red;
+  color: red;
+  transform: scale(1.5);
   transition: transform 0.3s;
 }
 
+.audio-player {
+  width: 10%;
+  position: absolute; /* 위치 고정을 위해 절대 위치 사용 */
+  top: 3%;
+  right: 0%;
+}
+
+#volumeBar {
+  width: 35%;
+  cursor: pointer;
+}
+
+.audio-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 1vw;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+}
+
 .title-container {
-  height: 18vh;
+  height: 20vh;
   overflow: hidden;
   text-align: center;
   position: relative;
@@ -92,7 +93,7 @@ body {
   white-space: nowrap;
   display: inline-block;
   position: relative;
-  top: 3vw;
+  top: 4vw;
   color: transparent;
 }
 .title-text::before {
@@ -107,7 +108,7 @@ body {
   width: 8vw;
   height: 8vw;
   position: absolute;
-  top: 0vw;
+  top: 1vw;
   animation: move 10s linear infinite;
 }
 .pacman::before, .pacman::after {
@@ -396,7 +397,7 @@ body {
 }
 .activities-container .activities-section {
   font-size: 1.8vw;
-  color: blue;
+  color: #00ffe5;
 }
 
 @keyframes activitiesVisibility {

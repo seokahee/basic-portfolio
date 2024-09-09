@@ -1,15 +1,60 @@
-// // BGM
-// const musicPlayer = document.querySelector("music-player");
-// audio.volume = 0.1;
-// loop = true;
-// autoplay = false;
+const audio = document.getElementById("audio");
+const initialContainer = document.querySelector(".initial-container");
+const soundOnBtn = document.getElementById("sound-on");
+const soundOffBtn = document.getElementById("sound-off");
+const audioPlayer = document.querySelector(".audio-player");
+const audioBtn = document.querySelector(".audio-btn");
+const volumeBar = document.getElementById("volumeBar");
 
-// if (yes) {
-//   autoplay = true;
-// } else {
-//   autoplay = false;
-//   muted = true;
-// }
+let isPlaying = false; // 현재 재생 상태 변수
+
+// 디폴트 볼륨 설정
+const defaultVolume = 0.05;
+audio.volume = defaultVolume;
+volumeBar.value = defaultVolume; // 슬라이더 디폴트 값 설정
+
+// ON 버튼 클릭 시 자동 재생 시작
+soundOnBtn.addEventListener("click", function () {
+  initialContainer.style.display = "none"; // 초기 화면 숨김
+  audioPlayer.style.display = "block"; // 플레이어 표시
+  audio.play(); // 자동 재생
+  audioBtn.innerText = "OFF"; // 버튼 텍스트
+  isPlaying = true;
+});
+
+// OFF 버튼 클릭 시 자동 재생 없이 플레이어 표시
+soundOffBtn.addEventListener("click", function () {
+  initialContainer.style.display = "none"; // 초기 화면 숨김
+  audioPlayer.style.display = "block"; // 플레이어 표시
+  audio.pause(); // 오디오 일시 정지
+  audioBtn.innerText = "ON"; // 버튼 텍스트
+  isPlaying = false;
+});
+
+// 재생/일시 정지 버튼 클릭
+audioBtn.addEventListener("click", function () {
+  if (isPlaying) {
+    // 재생 중이면 일시 정지
+    audio.pause();
+    audioBtn.innerText = "ON"; // 버튼 텍스트
+    isPlaying = false;
+  } else {
+    // 일시 정지 중이면 재생
+    audio.play();
+    audioBtn.innerText = "OFF"; // 버튼 텍스트
+    isPlaying = true;
+  }
+});
+
+// 볼륨 조절 기능
+volumeBar.addEventListener("input", function () {
+  audio.volume = volumeBar.value; // 슬라이더 값으로 오디오 볼륨 조절
+});
+
+//
+//
+//
+//
 
 // toggle
 const toggleBtns = document.querySelectorAll(".toggleBtn");
@@ -203,8 +248,20 @@ function createProjectCards() {
     projectImg.alt = project.imgArl;
 
     const projectLink = document.createElement("a");
-    projectLink.href = project.ProjectLink;
-    projectLink.target = "_blank";
+
+    // 프로젝트 링크 여부에 따라 처리
+    if (project.ProjectLink === "") {
+      // 링크가 없으면 클릭 시 알림창
+      projectLink.addEventListener("click", (event) => {
+        event.preventDefault(); // 링크 동작 막기
+        alert("준비 중입니다.");
+      });
+    } else {
+      // 링크가 있을 때는 정상적으로 링크로 이동
+      projectLink.href = project.ProjectLink;
+      projectLink.target = "_blank";
+    }
+
     projectLink.appendChild(projectImg);
 
     card.appendChild(projectName);
@@ -260,14 +317,4 @@ container.addEventListener("mouseout", (event) => {
   }
 });
 
-// About
-const activitiesSection = document.querySelector("#activitiesSection");
-const titleText = document.querySelector(".title-text");
-
-activitiesSection.addEventListener("mouseover", () => {
-  titleText.style.animationPlayState = "paused"; // 마우스 올리면 애니메이션 정지
-});
-
-activitiesSection.addEventListener("mouseout", () => {
-  titleText.style.animationPlayState = "running"; // 마우스 떼면 애니메이션 재개
-});
+// Audio
