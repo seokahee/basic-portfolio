@@ -99,15 +99,27 @@ toggleBtns.forEach((btn) => {
         }
 
         // Activities;
-        if (targetSection.id === "activitiesSection") {
-          const ghost = document.querySelector(".ghost");
-          ghost.addEventListener("click", function () {
-            alert("깜짝이야!");
-            ghost.style.display = "none";
-          });
-        } else {
-          ghost.style.display = "block";
+        const ghost = document.querySelector(".ghost");
+
+        // Click event handler function
+        function handleClick() {
+          alert("깜짝이야!");
+          ghost.style.opacity = "0"; // 클릭 시 opacity를 0으로 설정하여 숨김
+          ghost.removeEventListener("click", handleClick); // 클릭 후 이벤트 리스너 제거
         }
+
+        function updateGhost() {
+          if (targetSection.id === "activitiesSection") {
+            if (getComputedStyle(ghost).opacity === "0") {
+              ghost.style.opacity = "1";
+            }
+            ghost.addEventListener("click", handleClick, { once: true });
+          } else {
+            ghost.removeEventListener("click", handleClick);
+          }
+        }
+
+        updateGhost();
       }
     }
   });

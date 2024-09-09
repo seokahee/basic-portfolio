@@ -384,10 +384,9 @@ body {
   justify-content: space-around;
   font-size: 1.3vw;
   padding: 2%;
-  animation: noise 0.2s 0.5s ease-in 4 forwards;
   opacity: 0;
   visibility: hidden;
-  animation: activitiesBlinking 3s 2.5s ease-in forwards;
+  animation: activitiesVisibility 1s 0.7s ease-in forwards;
 }
 .activities-container .activities-item {
   display: flex;
@@ -400,7 +399,7 @@ body {
   color: blue;
 }
 
-@keyframes activitiesBlinking {
+@keyframes activitiesVisibility {
   100% {
     opacity: 1;
     visibility: visible; /* 끝나면 보임 */
@@ -415,7 +414,7 @@ body {
   background: red;
   border-top-left-radius: 70px;
   border-top-right-radius: 70px;
-  animation: showGhost 1s ease-out forwards, ghostMove 5s 1.3s linear forwards, ghostBlinking 0.4s linear infinite;
+  animation: ghostAppearance 1s ease-out forwards, ghostMove 2.2s 1.3s linear forwards, ghostBlinking 0.4s linear infinite;
   transform: scale(1.7);
   cursor: pointer;
 }
@@ -478,7 +477,15 @@ body {
   bottom: -0.5vw;
 }
 
-@keyframes showGhost {
+.ghost-txt {
+  position: absolute;
+  top: 92%;
+  font-size: 0.5vw;
+  text-align: center;
+  left: 10%;
+}
+
+@keyframes ghostAppearance {
   0%, 10% {
     top: 60%;
     transform: translateX(-100%);
@@ -490,14 +497,14 @@ body {
   }
   25% {
     top: 45%;
-    transform: scale(5);
+    transform: scale(6);
   }
   50% {
     top: 75%;
     transform: scale(2);
   }
   75% {
-    top: 45%;
+    top: 40%;
     transform: scale(5);
   }
   100% {

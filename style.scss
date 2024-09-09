@@ -424,7 +424,6 @@ body {
 }
 
 // activities
-
 .activities-container {
   width: 90%;
   height: 55vh;
@@ -433,11 +432,9 @@ body {
   justify-content: space-around;
   font-size: 1.3vw;
   padding: 2%;
-  animation: noise 0.2s 0.5s ease-in 4 forwards;
-  // filter: brightness(50%);
   opacity: 0;
   visibility: hidden;
-  animation: activitiesBlinking 3s 2.5s ease-in forwards;
+  animation: activitiesVisibility 1s 0.7s ease-in forwards;
 
   .activities-item {
     display: flex;
@@ -446,44 +443,18 @@ body {
     gap: 3vh;
   }
 
-  // .activities-item:hover {
-  //   filter: brightness(100%);
-  // }
-
   .activities-section {
     font-size: 1.8vw;
     color: blue;
   }
-
-  // p {
-  //   animation: activitiesBlinking 0.1s 5.5s ease-in 35 forwards;
-  // }
 }
 
-@keyframes activitiesBlinking {
+@keyframes activitiesVisibility {
   100% {
     opacity: 1;
     visibility: visible; /* 끝나면 보임 */
   }
 }
-// @keyframes activitiesBlinking {
-//   50% {
-//     color: transparent;
-//   }
-// }
-
-// @keyframes noise {
-//   50% {
-//     background-image: url("/img/gif/noise.gif");
-//     background-size: 60%;
-//   }
-// }
-//
-// 트랜지션 브라우저 설정
-// -webkit-transform: scale(1.2); /* 크롬, 사파리 */
-// -moz-transform: scale(1.2);  /* 파이어폭스 */
-// -ms-transform: scale(1.2); /* IE */
-// -o-transform: scale(1.2);  /* 오페라 */
 
 .ghost {
   position: absolute;
@@ -495,8 +466,8 @@ body {
   background: red;
   border-top-left-radius: 70px;
   border-top-right-radius: 70px;
-  animation: showGhost 1s ease-out forwards, ghostMove 5s 1.3s linear forwards,
-    ghostBlinking 0.4s linear infinite;
+  animation: ghostAppearance 1s ease-out forwards,
+    ghostMove 2.2s 1.3s linear forwards, ghostBlinking 0.4s linear infinite;
   transform: scale(1.7);
   cursor: pointer;
 }
@@ -504,7 +475,6 @@ body {
 .ghost::before,
 .ghost::after {
   position: absolute;
-  // z-index: 99;
   content: "";
   top: 20%;
   left: 7%;
@@ -528,7 +498,6 @@ body {
   border-radius: 100%;
   top: 36%;
   right: 68%;
-  // z-index: 99;
   animation: eyeLeft 0.7s 0.5s ease-in infinite;
 }
 
@@ -560,7 +529,15 @@ body {
   bottom: -0.5vw;
 }
 
-@keyframes showGhost {
+.ghost-txt {
+  position: absolute;
+  top: 92%;
+  font-size: 0.5vw;
+  text-align: center;
+  left: 10%;
+}
+
+@keyframes ghostAppearance {
   0%,
   10% {
     top: 60%;
@@ -574,14 +551,14 @@ body {
   }
   25% {
     top: 45%;
-    transform: scale(5);
+    transform: scale(6);
   }
   50% {
     top: 75%;
     transform: scale(2);
   }
   75% {
-    top: 45%;
+    top: 40%;
     transform: scale(5);
   }
   100% {
@@ -616,3 +593,9 @@ body {
     left: 65%;
   }
 }
+
+// 트랜지션 브라우저 설정
+// -webkit-transform: scale(1.2); /* 크롬, 사파리 */
+// -moz-transform: scale(1.2);  /* 파이어폭스 */
+// -ms-transform: scale(1.2); /* IE */
+// -o-transform: scale(1.2);  /* 오페라 */
