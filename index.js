@@ -260,7 +260,7 @@ const projects = [
     projectName: "V-Up",
     img: "https://github.com/seokahee/basic-portfolio/blob/main/img/gif/vUP.gif?raw=true",
     imgArl: "V-UP",
-    ProjectLink: "",
+    ProjectLink: "https://re-v-up-ver-3.vercel.app/",
   },
   {
     projectName: "BookPang",
