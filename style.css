@@ -22,10 +22,6 @@ body {
   box-sizing: border-box;
 }
 
-#audio {
-  display: none; /* 기본 오디오 컨트롤 숨김 */
-}
-
 .initial-container {
   width: 100%;
   height: 100%;
@@ -52,24 +48,31 @@ body {
 }
 .initial-container .sound-choice {
   font-size: 5vw;
+  cursor: pointer;
 }
 .initial-container .sound-choice:hover {
   cursor: pointer;
   text-shadow: 1px 1px 20px red;
   color: red;
   transform: scale(1.5);
-  transition: transform 0.3s;
+}
+
+#audio {
+  display: none; /* 기본 오디오 컨트롤 숨김 */
 }
 
 .audio-player {
-  width: 10%;
-  position: absolute; /* 위치 고정을 위해 절대 위치 사용 */
-  top: 3%;
-  right: 0%;
+  width: 15%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 90%;
+  padding-top: 1%;
+  align-content: space-between;
 }
 
 #volumeBar {
-  width: 35%;
+  width: 20%;
   cursor: pointer;
 }
 
@@ -385,9 +388,6 @@ body {
   justify-content: space-around;
   font-size: 1.3vw;
   padding: 2%;
-  opacity: 0;
-  visibility: hidden;
-  animation: activitiesVisibility 1s 0.7s ease-in forwards;
 }
 .activities-container .activities-item {
   display: flex;
@@ -400,24 +400,18 @@ body {
   color: #00ffe5;
 }
 
-@keyframes activitiesVisibility {
-  100% {
-    opacity: 1;
-    visibility: visible; /* 끝나면 보임 */
-  }
-}
 .ghost {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 0%;
   height: 8.7%;
   width: 3%;
   background: red;
   border-top-left-radius: 70px;
   border-top-right-radius: 70px;
-  animation: ghostAppearance 1s ease-out forwards, ghostMove 2.2s 1.3s linear forwards, ghostBlinking 0.4s linear infinite;
-  transform: scale(1.7);
   cursor: pointer;
+  transform: scale(4) rotate(65deg);
+  animation: ghostAppearance 1s ease-out forwards, ghostMove 2.2s 1.3s linear forwards, ghostBlinking 0.4s linear infinite;
 }
 
 .ghost::before,
@@ -488,8 +482,7 @@ body {
 
 @keyframes ghostAppearance {
   0%, 10% {
-    top: 60%;
-    transform: translateX(-100%);
+    transform: translateX(-100%) scale(4) rotate(65deg);
   }
 }
 @keyframes ghostMove {
@@ -511,6 +504,7 @@ body {
   100% {
     top: 70%;
     left: 90%;
+    transform: scale(1.7);
   }
 }
 @keyframes ghostBlinking {

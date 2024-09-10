@@ -5,11 +5,6 @@
     format("woff");
 }
 
-$pacman-top: 1vw;
-$pacman-size: 8vw;
-$title-text-top: 4vw;
-$title-text-font-size: 3vw;
-
 ::-webkit-scrollbar {
   display: none; // 스크롤바 숨김
 }
@@ -28,11 +23,7 @@ body {
   box-sizing: border-box;
 }
 
-// BGM
-#audio {
-  display: none; /* 기본 오디오 컨트롤 숨김 */
-}
-
+// 초기 화면
 .initial-container {
   width: 100%;
   height: 100%;
@@ -60,6 +51,7 @@ body {
 
   .sound-choice {
     font-size: 5vw;
+    cursor: pointer;
   }
 
   .sound-choice:hover {
@@ -67,19 +59,26 @@ body {
     text-shadow: 1px 1px 20px red;
     color: red;
     transform: scale(1.5);
-    transition: transform 0.3s;
   }
 }
 
+// BGM
+#audio {
+  display: none; /* 기본 오디오 컨트롤 숨김 */
+}
+
 .audio-player {
-  width: 10%;
-  position: absolute; /* 위치 고정을 위해 절대 위치 사용 */
-  top: 3%;
-  right: 0%;
+  width: 15%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 90%;
+  padding-top: 1%;
+  align-content: space-between;
 }
 
 #volumeBar {
-  width: 35%;
+  width: 20%;
   cursor: pointer;
 }
 
@@ -100,11 +99,11 @@ body {
 }
 
 .title-text {
-  font-size: $title-text-font-size;
+  font-size: 3vw;
   white-space: nowrap; // 줄 바꿈 방지
   display: inline-block;
   position: relative;
-  top: $title-text-top;
+  top: 4vw;
   color: transparent; // 텍스트 색상 투명
 
   &::before {
@@ -117,16 +116,16 @@ body {
 }
 
 .pacman {
-  width: $pacman-size;
-  height: $pacman-size;
+  width: 8vw;
+  height: 8vw;
   position: absolute;
-  top: $pacman-top;
+  top: 1vw;
   animation: move 10s linear infinite;
 
   &::before,
   &::after {
     content: "";
-    border: calc($pacman-size / 2) solid yellow;
+    border: calc(8vw / 2) solid yellow;
     border-radius: 50%;
     position: absolute;
     border-left-color: transparent;
@@ -428,9 +427,6 @@ body {
   justify-content: space-around;
   font-size: 1.3vw;
   padding: 2%;
-  opacity: 0;
-  visibility: hidden;
-  animation: activitiesVisibility 1s 0.7s ease-in forwards;
 
   .activities-item {
     display: flex;
@@ -445,27 +441,19 @@ body {
   }
 }
 
-@keyframes activitiesVisibility {
-  100% {
-    opacity: 1;
-    visibility: visible; /* 끝나면 보임 */
-  }
-}
-
 .ghost {
   position: absolute;
-  top: 50%;
-  // z-index: 99;
+  top: 60%;
   left: 0%;
   height: 8.7%;
   width: 3%;
   background: red;
   border-top-left-radius: 70px;
   border-top-right-radius: 70px;
+  cursor: pointer;
+  transform: scale(4) rotate(65deg);
   animation: ghostAppearance 1s ease-out forwards,
     ghostMove 2.2s 1.3s linear forwards, ghostBlinking 0.4s linear infinite;
-  transform: scale(1.7);
-  cursor: pointer;
 }
 
 .ghost::before,
@@ -536,8 +524,7 @@ body {
 @keyframes ghostAppearance {
   0%,
   10% {
-    top: 60%;
-    transform: translateX(-100%);
+    transform: translateX(-100%) scale(4) rotate(65deg);
   }
 }
 
@@ -560,6 +547,7 @@ body {
   100% {
     top: 70%;
     left: 90%;
+    transform: scale(1.7);
   }
 }
 
@@ -589,9 +577,3 @@ body {
     left: 65%;
   }
 }
-
-// 트랜지션 브라우저 설정
-// -webkit-transform: scale(1.2); /* 크롬, 사파리 */
-// -moz-transform: scale(1.2);  /* 파이어폭스 */
-// -ms-transform: scale(1.2); /* IE */
-// -o-transform: scale(1.2);  /* 오페라 */

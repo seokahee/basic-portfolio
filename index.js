@@ -13,48 +13,44 @@ const defaultVolume = 0.05;
 audio.volume = defaultVolume;
 volumeBar.value = defaultVolume; // 슬라이더 디폴트 값 설정
 
-// ON 버튼 클릭 시 자동 재생 시작
-soundOnBtn.addEventListener("click", function () {
-  initialContainer.style.display = "none"; // 초기 화면 숨김
-  audioPlayer.style.display = "block"; // 플레이어 표시
+// 초기 화면 숨기기 및 플레이어 표시
+function hideInitialShowPlayer() {
+  initialContainer.style.display = "none";
+  audioPlayer.style.display = "block";
+}
+
+// 사운드 ON 버튼 클릭 시 동작
+soundOnBtn.addEventListener("click", () => {
+  hideInitialShowPlayer();
   audio.play(); // 자동 재생
   audioBtn.innerText = "OFF"; // 버튼 텍스트
   isPlaying = true;
 });
 
-// OFF 버튼 클릭 시 자동 재생 없이 플레이어 표시
-soundOffBtn.addEventListener("click", function () {
-  initialContainer.style.display = "none"; // 초기 화면 숨김
-  audioPlayer.style.display = "block"; // 플레이어 표시
-  audio.pause(); // 오디오 일시 정지
-  audioBtn.innerText = "ON"; // 버튼 텍스트
+// 사운드 OFF 버튼 클릭 시 동작
+soundOffBtn.addEventListener("click", () => {
+  hideInitialShowPlayer();
+  audio.pause(); // 재생하지 않음
+  audioBtn.innerText = "ON";
   isPlaying = false;
 });
 
-// 재생/일시 정지 버튼 클릭
-audioBtn.addEventListener("click", function () {
+// 재생/일시 정지 버튼 클릭 시 동작
+audioBtn.addEventListener("click", () => {
   if (isPlaying) {
-    // 재생 중이면 일시 정지
     audio.pause();
-    audioBtn.innerText = "ON"; // 버튼 텍스트
-    isPlaying = false;
+    audioBtn.innerText = "ON";
   } else {
-    // 일시 정지 중이면 재생
     audio.play();
-    audioBtn.innerText = "OFF"; // 버튼 텍스트
-    isPlaying = true;
+    audioBtn.innerText = "OFF";
   }
+  isPlaying = !isPlaying;
 });
 
 // 볼륨 조절 기능
-volumeBar.addEventListener("input", function () {
-  audio.volume = volumeBar.value; // 슬라이더 값으로 오디오 볼륨 조절
+volumeBar.addEventListener("input", () => {
+  audio.volume = volumeBar.value;
 });
-
-//
-//
-//
-//
 
 // toggle
 const toggleBtns = document.querySelectorAll(".toggleBtn");
@@ -316,5 +312,3 @@ container.addEventListener("mouseout", (event) => {
     card.style.border = card.dataset.border;
   }
 });
-
-// Audio
