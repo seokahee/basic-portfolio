@@ -168,23 +168,65 @@ toggleBtns.forEach((btn) => {
 
 // Skill
 const frontendImages = [
-  { src: "/img/icons/next.png", alt: "Next.js" },
-  { src: "/img/icons/js.png", alt: "JavaScript" },
-  { src: "/img/icons/ts.png", alt: "Typescript" },
-  { src: "/img/icons/redux.png", alt: "Redux" },
-  { src: "/img/icons/zustand.png", alt: "Zustand" },
-  { src: "/img/icons/axios.png", alt: "Axios" },
-  { src: "/img/icons/query.png", alt: "TanStack-Query" },
-  { src: "/img/icons/tailwind.png", alt: "Tailwind css" },
-  { src: "/img/icons/style.png", alt: "Styled-components" },
+  {
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/next.png",
+    alt: "Next.js",
+  },
+  {
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/js.png",
+    alt: "JavaScript",
+  },
+  {
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/ts.png",
+    alt: "Typescript",
+  },
+  {
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/redux.png",
+    alt: "Redux",
+  },
+  {
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/zustand.png",
+    alt: "Zustand",
+  },
+  {
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/axios.png",
+    alt: "Axios",
+  },
+  {
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/query.png",
+    alt: "TanStack-Query",
+  },
+  {
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/tailwind.png",
+    alt: "Tailwind css",
+  },
+  {
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/style.png",
+    alt: "Styled-components",
+  },
 ];
 
 const backendImages = [
-  { src: "/img/icons/Java.png", alt: "Java" },
-  { src: "/img/icons/cat.png", alt: "Apache Tomcat" },
-  { src: "/img/icons/oracle.png", alt: "Oracle" },
-  { src: "/img/icons/sql.png", alt: "SQL" },
-  { src: "/img/icons/my.png", alt: "MySQL" },
+  {
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/Java.png",
+    alt: "Java",
+  },
+  {
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/cat.png",
+    alt: "Apache Tomcat",
+  },
+  {
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/oracle.png",
+    alt: "Oracle",
+  },
+  {
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/sql.png",
+    alt: "SQL",
+  },
+  {
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/my.png",
+    alt: "MySQL",
+  },
 ];
 
 const frontendList = document.getElementById("frontend-list");
@@ -216,13 +258,13 @@ const cardBorder = ["rgb(255 0 0)", "#0bff00"];
 const projects = [
   {
     projectName: "V-Up",
-    img: "/img/gif/vUP.gif",
+    img: "https://github.com/seokahee/basic-portfolio/blob/main/img/gif/vUP.gif",
     imgArl: "V-UP",
-    ProjectLink: "https://re-v-up-ver-3.vercel.app/",
+    ProjectLink: "",
   },
   {
     projectName: "BookPang",
-    img: "/img/gif/BookPang.gif",
+    img: "https://github.com/seokahee/basic-portfolio/blob/main/img/gif/BookPang.gif",
     imgArl: "BookPang",
     ProjectLink: "",
   },
