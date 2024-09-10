@@ -169,62 +169,62 @@ toggleBtns.forEach((btn) => {
 // Skill
 const frontendImages = [
   {
-    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/next.png",
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/next.png?raw=true",
     alt: "Next.js",
   },
   {
-    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/js.png",
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/js.png?raw=true",
     alt: "JavaScript",
   },
   {
-    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/ts.png",
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/ts.png?raw=true",
     alt: "Typescript",
   },
   {
-    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/redux.png",
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/redux.png?raw=true",
     alt: "Redux",
   },
   {
-    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/zustand.png",
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/zustand.png?raw=true",
     alt: "Zustand",
   },
   {
-    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/axios.png",
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/axios.png?raw=true",
     alt: "Axios",
   },
   {
-    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/query.png",
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/query.png?raw=true",
     alt: "TanStack-Query",
   },
   {
-    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/tailwind.png",
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/tailwind.png?raw=true",
     alt: "Tailwind css",
   },
   {
-    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/style.png",
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/style.png?raw=true",
     alt: "Styled-components",
   },
 ];
 
 const backendImages = [
   {
-    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/Java.png",
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/Java.png?raw=true",
     alt: "Java",
   },
   {
-    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/cat.png",
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/cat.png?raw=true",
     alt: "Apache Tomcat",
   },
   {
-    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/oracle.png",
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/oracle.png?raw=true",
     alt: "Oracle",
   },
   {
-    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/sql.png",
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/sql.png?raw=true",
     alt: "SQL",
   },
   {
-    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/my.png",
+    src: "https://github.com/seokahee/basic-portfolio/blob/main/img/icons/my.png?raw=true",
     alt: "MySQL",
   },
 ];
@@ -258,13 +258,13 @@ const cardBorder = ["rgb(255 0 0)", "#0bff00"];
 const projects = [
   {
     projectName: "V-Up",
-    img: "https://github.com/seokahee/basic-portfolio/blob/main/img/gif/vUP.gif",
+    img: "https://github.com/seokahee/basic-portfolio/blob/main/img/gif/vUP.gif?raw=true",
     imgArl: "V-UP",
     ProjectLink: "",
   },
   {
     projectName: "BookPang",
-    img: "https://github.com/seokahee/basic-portfolio/blob/main/img/gif/BookPang.gif",
+    img: "https://github.com/seokahee/basic-portfolio/blob/main/img/gif/BookPang.gif?raw=true",
     imgArl: "BookPang",
     ProjectLink: "",
   },
